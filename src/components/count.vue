@@ -10,8 +10,9 @@
     </div>
 </template>
 <script>
-import { mapState,mapMutations } from 'vuex';  //引入mapState,mapMutations
-    import store from '@/vuex/store'
+//引入mapState,mapMutations,mapGetters
+import { mapState,mapMutations,mapGetters,mapActions} from 'vuex'; 
+import store from '@/vuex/store'
     export default{
         data(){
             return{
@@ -33,11 +34,23 @@ import { mapState,mapMutations } from 'vuex';  //引入mapState,mapMutations
         //  })
         
         //方法三
-         computed:mapState(["count"]),
+        //computed:mapState(["count"]),
+        //
+        //注意三个点是ES6中的展开运算符，在vue 的构造器里边只能有一个computed属性，如果你写多个，只有最后一个computed属性可用
+         computed:{
+            ...mapState(["count"]),
+            ...mapGetters(["count"])
+        },
 
         // 在模板中可以直接使用我们的reduce或者add方法
-         methods:mapMutations([
-            'add','reduce'
-        ]),
+        //  methods:mapMutations([
+        //     'add','reduce'
+        // ]),
+        
+          methods:{
+            ...mapMutations(['add','reduce']),
+            ...mapActions(['addAction','reduceAction'])
+        }
+        
     }
 </script>
