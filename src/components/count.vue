@@ -49,7 +49,7 @@ import { mapState,mapMutations,mapGetters,mapActions} from 'vuex';
         
           methods:{
             ...mapMutations(['add','reduce']),
-            //这两个方法还未被调用，需要再增加两个按钮
+            //下面这两个方法还未被调用，需要再增加两个按钮
             ...mapActions(['addAction','reduceAction'])    
         }
         
