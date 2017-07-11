@@ -12,7 +12,7 @@
 <script>
 //引入mapState,mapMutations,mapGetters
 import { mapState,mapMutations,mapGetters,mapActions} from 'vuex'; 
-import store from '@/vuex/store'
+
     export default{
         data(){
             return{
@@ -49,7 +49,8 @@ import store from '@/vuex/store'
         
           methods:{
             ...mapMutations(['add','reduce']),
-            ...mapActions(['addAction','reduceAction'])
+            //这两个方法还未被调用，需要再增加两个按钮
+            ...mapActions(['addAction','reduceAction'])    
         }
         
     }

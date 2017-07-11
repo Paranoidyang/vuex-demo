@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from '@/vuex/store'
+import store from '@/vuex/store'//这里引入后，其它地方就可以直接调用了
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
